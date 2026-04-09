@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 214 47% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 214 47% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 47% 8%;
+    --primary: 28 81% 32%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 38 37% 90%;
+    --secondary-foreground: 214 47% 12%;
+    --muted: 32 28% 92%;
+    --muted-foreground: 214 18% 38%;
+    --accent: 37 48% 86%;
+    --accent-foreground: 214 47% 12%;
+    --border: 32 18% 85%;
+    --input: 32 18% 85%;
+    --ring: 31 57% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-body text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(208, 183, 142, 0.28), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(17, 27, 40, 0.08), transparent 30%);
+  }
+
+  ::selection {
+    background: rgba(169, 117, 49, 0.22);
+  }
+}
+
+@layer utilities {
+  .section-space {
+    @apply py-20 sm:py-24;
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/70 shadow-panel backdrop-blur;
+  }
+}
+
