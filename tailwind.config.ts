@@ -67,6 +67,12 @@ const config: Config = {
           800: "#111B28",
           900: "#0A121C",
         },
+        /** Accent froid type produit / infra (sparingly) */
+        tech: {
+          400: "#22D3EE",
+          500: "#06B6D4",
+          600: "#0891B2",
+        },
         success: "#18896B",
         warning: "#CA7A24",
       },
@@ -78,10 +84,29 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-display)"],
         body: ["var(--font-body)"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
       },
       boxShadow: {
         halo: "0 24px 80px rgba(10, 18, 28, 0.16)",
         panel: "0 10px 40px rgba(10, 18, 28, 0.08)",
+        "glow-tech":
+          "0 0 0 1px rgba(34, 211, 238, 0.12), 0 12px 48px rgba(6, 182, 212, 0.08), 0 24px 80px rgba(10, 18, 28, 0.06)",
+        "card-hover":
+          "0 4px 24px rgba(10, 18, 28, 0.06), 0 16px 48px rgba(10, 18, 28, 0.08)",
+      },
+      keyframes: {
+        "shimmer-line": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.65" },
+        },
+      },
+      animation: {
+        "shimmer-line": "shimmer-line 2.8s ease-in-out infinite",
+        "pulse-soft": "pulse-soft 4s ease-in-out infinite",
       },
       backgroundImage: {
         "hero-grid":

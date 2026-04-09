@@ -17,12 +17,19 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden rounded-[40px] border border-white/10 bg-ink-900 px-6 py-14 text-white shadow-halo sm:px-10 sm:py-20">
-      <div className="absolute inset-0 bg-hero-grid bg-[size:48px_48px] opacity-25" />
-      <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_top,rgba(208,183,142,0.38),transparent_58%)]" />
+      <div className="absolute inset-0 bg-hero-grid bg-[size:40px_40px] opacity-[0.16]" aria-hidden />
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 60% at 80% 0%, rgba(34, 211, 238, 0.12), transparent 50%), radial-gradient(circle at 0% 100%, rgba(208, 183, 142, 0.2), transparent 45%)",
+        }}
+        aria-hidden
+      />
       <div className="relative grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="space-y-6">
           <Badge variant="muted">{eyebrow}</Badge>
-          <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-[-0.03em] sm:text-5xl">
             {title}
           </h1>
           <p className="max-w-2xl text-base leading-8 text-white/72 sm:text-lg">

@@ -17,11 +17,21 @@ export function SectionHeading({
   invert,
 }: SectionHeadingProps) {
   return (
-    <div className={cn("space-y-4", centered && "mx-auto max-w-3xl text-center")}>
-      {eyebrow ? <Badge variant={invert ? "muted" : "default"}>{eyebrow}</Badge> : null}
+    <div
+      className={cn(
+        "space-y-5",
+        centered && "mx-auto max-w-3xl text-center",
+        !centered && !invert && "accent-edge max-w-3xl",
+      )}
+    >
+      {eyebrow ? (
+        <Badge variant={invert ? "muted" : "tech"} className={cn(centered && "mx-auto")}>
+          {eyebrow}
+        </Badge>
+      ) : null}
       <h2
         className={cn(
-          "font-display text-3xl font-semibold tracking-tight sm:text-4xl",
+          "font-display text-3xl font-semibold tracking-[-0.02em] sm:text-[2.125rem] sm:leading-[1.15]",
           invert ? "text-white" : "text-ink-900",
         )}
       >
@@ -30,8 +40,8 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "max-w-2xl text-base leading-8 sm:text-lg",
-            invert ? "text-white/72" : "text-ink-500",
+            "max-w-2xl text-base leading-relaxed sm:text-lg sm:leading-8",
+            invert ? "text-white/75" : "text-ink-500",
             centered && "mx-auto",
           )}
         >
@@ -41,4 +51,3 @@ export function SectionHeading({
     </div>
   );
 }
-

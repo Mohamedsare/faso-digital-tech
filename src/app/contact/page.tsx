@@ -29,8 +29,14 @@ export default function ContactPage() {
               <p className="mt-2 text-sm font-medium text-ink-700">{contactDetails.email}</p>
             </div>
             <div className="rounded-2xl bg-background px-4 py-4">
-              <p className="text-xs uppercase tracking-[0.18em] text-ink-400">Telephone</p>
-              <p className="mt-2 text-sm font-medium text-ink-700">{contactDetails.phone}</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-ink-400">Téléphone</p>
+              <div className="mt-2 space-y-1">
+                {contactDetails.phones.map((num) => (
+                  <p key={num} className="text-sm font-medium text-ink-700">
+                    {num}
+                  </p>
+                ))}
+              </div>
             </div>
             <div className="rounded-2xl bg-background px-4 py-4">
               <p className="text-xs uppercase tracking-[0.18em] text-ink-400">Base</p>

@@ -20,11 +20,17 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "FASODIGITAL TECHNOLOGIES",
-    template: "%s | FASODIGITAL TECHNOLOGIES",
+    default: "FASODIGITAL",
+    template: "%s | FASODIGITAL",
   },
   description:
-    "Next-generation digital systems, SaaS platforms, cybersecurity and AI delivery for Africa.",
+    "Systèmes numériques, plateformes SaaS, cybersécurité et projets d’intelligence artificielle.",
+};
+
+export const viewport = {
+  width: "device-width" as const,
+  initialScale: 1,
+  viewportFit: "cover" as const,
 };
 
 export default function RootLayout({
@@ -35,9 +41,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${display.variable} ${body.variable}`}>
+        {/* Header en dehors du wrapper : le menu mobile (portail) peut passer sous la barre avec z-index */}
+        <SiteHeader />
         <div className="min-h-screen">
-          <SiteHeader />
-          <main className="container py-8 sm:py-10">{children}</main>
+          <main className="container relative py-10 sm:py-12">{children}</main>
           <SiteFooter />
         </div>
       </body>

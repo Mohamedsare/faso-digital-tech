@@ -5,7 +5,8 @@ import { trustPartners } from "@/content/site";
 
 export function ClientsTrustSection() {
   return (
-    <section className="relative overflow-hidden rounded-[40px] border border-black/[0.06] bg-gradient-to-br from-white via-brand-50/40 to-white px-5 py-14 shadow-panel sm:px-10 sm:py-16">
+    <section className="relative overflow-hidden rounded-[40px] border border-black/[0.06] bg-gradient-to-br from-white via-brand-50/35 to-white px-5 py-14 shadow-panel sm:px-10 sm:py-16">
+      <div className="pointer-events-none absolute inset-0 bg-grid-faint opacity-40" aria-hidden />
       <div
         aria-hidden
         className="pointer-events-none absolute -right-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-brand-200/25 blur-3xl"
@@ -15,7 +16,7 @@ export function ClientsTrustSection() {
         className="pointer-events-none absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-ink-900/[0.04] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-3xl text-center">
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <Reveal>
           <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand-600">
             Confiance
@@ -31,7 +32,7 @@ export function ClientsTrustSection() {
         </Reveal>
       </div>
 
-      <div className="relative mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="relative z-10 mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {trustPartners.map((partner, index) => (
           <Reveal key={partner.id} delay={index * 0.06}>
             <article className="group flex h-full flex-col rounded-2xl border border-black/[0.06] bg-white/90 p-5 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-brand-300/40 hover:shadow-md">
@@ -50,7 +51,7 @@ export function ClientsTrustSection() {
         ))}
       </div>
 
-      <p className="relative mt-10 text-center text-xs text-ink-500">
+      <p className="relative z-10 mt-10 text-center text-xs text-ink-500">
         Logotypes et noms détaillés disponibles sur demande, dans le respect des accords de
         confidentialité.
       </p>

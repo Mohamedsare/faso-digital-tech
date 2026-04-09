@@ -93,6 +93,43 @@ export const trustPartners = [
   },
 ] as const;
 
+/** Sections plein écran avec image futuriste et effet parallaxe (sticky + scroll) */
+export type ParallaxRevealBlock = {
+  id: string;
+  imageUrl: string;
+  imageAlt: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  /** CSS object-position, ex. "center 30%" */
+  imagePosition?: string;
+};
+
+export const parallaxRevealBlocks: ParallaxRevealBlock[] = [
+  {
+    id: "horizon",
+    imageUrl:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2400&q=85",
+    imageAlt: "Visual futuriste : hologrammes et cyberdéfense",
+    eyebrow: "Horizon",
+    title: "Ingénierie alignée sur la donnée, la vitesse et la confiance",
+    description:
+      "Au fil du défilement, la scène se dévoile : plateformes résilientes, sécurité intégrée dès la conception, et produits qui tiennent la charge réelle — pas seulement en démo.",
+    imagePosition: "center 42%",
+  },
+  {
+    id: "signal",
+    imageUrl:
+      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=2400&q=85",
+    imageAlt: "Sphère et géométrie 3D futuriste",
+    eyebrow: "Signal",
+    title: "Quand l’infrastructure devient un avantage compétitif",
+    description:
+      "Observabilité, automatisation et garde-fous : le socle technique ne se contente plus de tourner — il anticipe, s’adapte et reste lisible pour les équipes.",
+    imagePosition: "center",
+  },
+];
+
 export const caseStudies = [
   {
     title: "Plateforme SaaS pour le retail",
@@ -194,21 +231,21 @@ export const offerPages = {
 
 export const contactDetails = {
   email: "contact@fasodigital.com",
-  phone: "+XXX XX XX XX XX",
+  phones: ["+212 771 668 079", "+226 64 71 20 44"],
   address: "Casablanca, Maroc",
   responseTime: "Reponse sous 24h",
 };
 
 export const footerLinks = {
   company: [
-    { href: "/", label: "A propos" },
+    { href: "/", label: "À propos" },
     { href: "/projets", label: "Projets" },
     { href: "/clients", label: "Clients" },
     { href: "/contact", label: "Contact" },
   ],
   services: [
     { href: "/saas", label: "SaaS" },
-    { href: "/cybersecurite", label: "Cybersecurite" },
+    { href: "/cybersecurite", label: "Cybersécurité" },
     { href: "/ia", label: "Intelligence artificielle" },
   ],
 };

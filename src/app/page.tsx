@@ -3,17 +3,25 @@ import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 
 import { ClientsTrustSection } from "@/components/marketing/clients-trust-section";
 import { HomeHero } from "@/components/marketing/home-hero";
+import { ParallaxRevealSection } from "@/components/marketing/parallax-reveal-section";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import { approachSteps, expertiseCards, featuredProjects } from "@/content/site";
+import {
+  approachSteps,
+  expertiseCards,
+  featuredProjects,
+  parallaxRevealBlocks,
+} from "@/content/site";
 
 export default function HomePage() {
   return (
     <div className="space-y-8 pb-12 sm:space-y-10">
       <HomeHero />
+
+      <ParallaxRevealSection block={parallaxRevealBlocks[0]} />
 
       <section className="section-space">
         <Reveal>
@@ -86,7 +94,7 @@ export default function HomePage() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {approachSteps.map((item, index) => (
             <Reveal key={item.step} delay={index * 0.05}>
-              <Card className="h-full bg-white/75">
+              <Card className="h-full">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-600">
                   {item.step}
                 </p>
@@ -98,7 +106,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-[40px] bg-white px-6 py-12 shadow-panel sm:px-10">
+      <ParallaxRevealSection block={parallaxRevealBlocks[1]} />
+
+      <section className="relative overflow-hidden rounded-[40px] border border-black/[0.05] bg-white/95 px-6 py-12 shadow-panel sm:px-10">
         <Reveal>
           <SectionHeading
             eyebrow="Proof"
@@ -109,7 +119,7 @@ export default function HomePage() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featuredProjects.map((project, index) => (
             <Reveal key={project.title} delay={index * 0.08}>
-              <Card className="h-full border-black/5 bg-background">
+              <Card className="h-full bg-background/80">
                 <div className="mb-4 flex items-center justify-between">
                   <Badge>{project.tags[0]}</Badge>
                   <Sparkles className="h-5 w-5 text-brand-500" />
